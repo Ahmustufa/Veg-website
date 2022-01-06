@@ -1,0 +1,15 @@
+.footer{
+    height: 20rem;
+    
+}
+
+.footer-row{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
