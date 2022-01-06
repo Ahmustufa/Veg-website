@@ -33,9 +33,7 @@ const Home = () => {
   </Row>
   </Container>
   </div>
-  <div className='All-department'>
-      <p>All department</p>
-  </div>
+ 
   </>
     )
 }
