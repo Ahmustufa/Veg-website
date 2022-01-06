@@ -4,3 +4,26 @@
     display: flex;
     align-items: center;
 }
+
+.Department-Col{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border: 2px solid black;
+    display: inline-block;
+    
+}
+
+.ShopNow-Row{
+    background-image: url('https://preview.colorlib.com/theme/ogani/img/hero/banner.jpg.webp');
+    
+    height: 30rem;
+    background-position: right;
+    background-size: cover;
+    
+}
+
+.ShopNow-Col{
+    padding-top: 12rem !important;
+}
