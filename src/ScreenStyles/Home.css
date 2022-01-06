@@ -1,73 +1,66 @@
-.home{
-    height: 100px;
-    /* border: solid 2px red; */
-    display: flex;
-    align-items: center;
+.home {
+  height: 100px;
+  /* border: solid 2px red; */
+  display: flex;
+  align-items: center;
 }
 
-.Department-Col{
-    display: flex !important;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    border: 2px solid black;
-    display: inline-block;
-    
+.Department-Col {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  border: 2px solid black;
+  display: inline-block;
 }
 
-.ShopNow-Row{
-    background-image: url('https://preview.colorlib.com/theme/ogani/img/hero/banner.jpg.webp');
-    
-    height: 30rem;
-    background-position: right;
-    background-size: cover;
-    
+.ShopNow-Row {
+  background-image: url("https://preview.colorlib.com/theme/ogani/img/hero/banner.jpg.webp");
+
+  height: 30rem;
+  background-position: right;
+  background-size: cover;
 }
 
-.ShopNow-Col{
-    padding-top: 12rem !important;
+.ShopNow-Col {
+  padding-top: 12rem !important;
 }
 
-.Slider-Col{
-    
-    display: flex;
-    justify-content: center;
-    
+.Slider-Col {
+  display: flex;
+  justify-content: center;
 }
-.Featuredproduct{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.Featuredproduct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.featuredProductUl{
-    display: flex;
-    justify-content: center;
-    
+.featuredProductUl {
+  display: flex;
+  justify-content: center;
 }
-.featuredProductLi{
-    list-style: none;
-    padding: 2rem;
+.featuredProductLi {
+  list-style: none;
+  padding: 2rem;
 }
 
-.items{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.list{
-    display: flex;
-    
+.list {
+  display: flex;
 }
 
-.latestproduct{
-    padding-right: 6rem;
+.latestproduct {
+  padding-right: 6rem;
 }
 
-.fromtheblog{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.fromtheblog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
