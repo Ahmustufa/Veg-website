@@ -27,3 +27,32 @@
 .ShopNow-Col{
     padding-top: 12rem !important;
 }
+
+.Slider-Col{
+    
+    display: flex;
+    justify-content: center;
+    
+}
+.Featuredproduct{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.featuredProductUl{
+    display: flex;
+    justify-content: center;
+    
+}
+.featuredProductLi{
+    list-style: none;
+    padding: 2rem;
+}
+
+.items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
