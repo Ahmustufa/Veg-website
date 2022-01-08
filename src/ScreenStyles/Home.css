@@ -62,6 +62,7 @@ a{
 }
 .Featuredproduct {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -91,6 +92,7 @@ a{
 
 .fromtheblog {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

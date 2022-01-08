@@ -91,7 +91,7 @@ const footer = () => {
             <p>Get E-mail updates about our latest shop and special offers.</p>
             <InputGroup className="mb-3">
               <FormControl aria-label="Text input with dropdown button" />
-              <Button>Search</Button>
+              <Button variant="dark">Search</Button>
             </InputGroup>
             <FontAwesomeIcon className="pin" icon={faPinterest} />
             <FontAwesomeIcon className="fac" icon={faFacebookF} />

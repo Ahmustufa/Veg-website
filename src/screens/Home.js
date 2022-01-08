@@ -206,7 +206,7 @@ const Home = () => {
               </Row>
               <Row className="ShopNow-Row m-2 mb-4">
                 <Col md={6} className="ShopNow-Col Sh p-5 ">
-                  <p>F R U I T F R E S H</p>
+                  <p>F R U I T  F R E S H</p>
                   <h1>Vegetable</h1>
                   <h1>100% Organic</h1>
                   <p>Free Pickup and Delivery Available</p>
@@ -225,6 +225,7 @@ const Home = () => {
           <Row>
             <Col md={12} className="Featuredproduct">
               <h1>Featured product</h1>
+              <hr style={{width: "10%"}}/>
             </Col>
           </Row>
 
@@ -327,6 +328,7 @@ const Home = () => {
           <Row className="mb-5">
             <Col md={12} className="fromtheblog">
               <h1>From The Blog</h1>
+              <hr style={{width: "10%"}}/>
             </Col>
           </Row>
           <Row>

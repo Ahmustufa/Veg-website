@@ -26,10 +26,10 @@ const header = () => {
                 Free Shipping for all Order of $99{" "}
               </Nav.Link>
             </Nav>
-            <FontAwesomeIcon className="pin" icon={faPinterest} />
-            <FontAwesomeIcon className="fac" icon={faFacebookF} />
-            <FontAwesomeIcon className="twi" icon={faTwitter} />
-            <FontAwesomeIcon className="Link" icon={faLinkedin} />
+            <a href="#"><FontAwesomeIcon className="pin" icon={faPinterest} /></a>
+            <a href="#"><FontAwesomeIcon className="fac" icon={faFacebookF} /></a>
+            <a href="#"><FontAwesomeIcon className="twi" icon={faTwitter} /></a>
+            <a href="#"><FontAwesomeIcon className="Link" icon={faLinkedin} /></a>
           </Navbar.Collapse>
         </Container>
       </Navbar>
