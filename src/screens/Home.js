@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Carousel,
@@ -24,14 +24,124 @@ import {
   faComment,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGratipay } from "@fortawesome/free-brands-svg-icons";
-// import Responsive from "../components/Slider";
+import Responsive from "../components/Slider";
+
 // import { Link } from "react-router-dom";
 
+function getRandomNumber(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 const Home = () => {
+  generateRandomPeoples();
+
+  const products = [
+    {
+      name: `Product ${getRandomNumber(1, 10)}`,
+      image:
+        "https://preview.colorlib.com/theme/ogani/img/featured/feature-1.jpg.webp",
+      price: getRandomNumber(200, 500),
+      category: "meat",
+    },
+    {
+      name: `Product ${getRandomNumber(1, 10)}`,
+      image:
+        "https://preview.colorlib.com/theme/ogani/img/featured/feature-2.jpg.webp",
+      price: getRandomNumber(200, 500),
+      category: "fruit",
+    },
+    {
+      name: `Product ${getRandomNumber(1, 10)}`,
+      image:
+        "https://preview.colorlib.com/theme/ogani/img/featured/feature-3.jpg.webp",
+      price: getRandomNumber(200, 500),
+      category: "fruit",
+    },
+    {
+      name: `Product ${getRandomNumber(1, 10)}`,
+      image:
+        "https://preview.colorlib.com/theme/ogani/img/featured/feature-4.jpg.webp",
+      price: getRandomNumber(200, 500),
+      category: "fruit",
+    },
+    {
+      name: `Product ${getRandomNumber(1, 10)}`,
+      image:
+        "https://preview.colorlib.com/theme/ogani/img/featured/feature-5.jpg.webp",
+      price: getRandomNumber(200, 500),
+      category: "fruit",
+    },
+    {
+      name: `Product ${getRandomNumber(1, 10)}`,
+      image:
+        "https://preview.colorlib.com/theme/ogani/img/featured/feature-6.jpg.webp",
+      price: getRandomNumber(200, 500),
+      category: "fastFood",
+    },
+    {
+      name: `Product ${getRandomNumber(1, 10)}`,
+      image:
+        "https://preview.colorlib.com/theme/ogani/img/featured/feature-7.jpg.webp",
+      price: getRandomNumber(200, 500),
+      category: "fruit",
+    },
+    {
+      name: `Product ${getRandomNumber(1, 10)}`,
+      image:
+        "https://preview.colorlib.com/theme/ogani/img/featured/feature-8.jpg.webp",
+      price: getRandomNumber(200, 500),
+      category: "meat",
+    },
+    {
+      name: `Product ${getRandomNumber(1, 10)}`,
+      image:
+        "https://preview.colorlib.com/theme/ogani/img/featured/feature-1.jpg.webp",
+      price: getRandomNumber(200, 500),
+      category: "meat",
+    },
+    {
+      name: `Product ${getRandomNumber(1, 10)}`,
+      image:
+        "https://preview.colorlib.com/theme/ogani/img/featured/feature-1.jpg.webp",
+      price: getRandomNumber(200, 500),
+      category: "meat",
+    },
+    {
+      name: `Product ${getRandomNumber(1, 10)}`,
+      image:
+        "https://preview.colorlib.com/theme/ogani/img/featured/feature-1.jpg.webp",
+      price: getRandomNumber(200, 500),
+      category: "meat",
+    },
+  ];
+
+  const [productList, setProductList] = useState(products);
+
+  const categories = [
+    "Fresh Meat",
+    "Vegetables",
+    "Fruit & Nut Gifts",
+    "Fresh Berries",
+    "Ocean Foods",
+    "Butter & Eggs",
+    "Fastfood",
+    "Fresh Onion",
+    "Papayaya & Crips",
+    "Oatmeal",
+    "Fresh Bananas",
+  ];
+
+  const filteredProducts = (category) => {
+    setProductList(products.filter((product) => product.category === category));
+  };
+
+  const [arrowToggle, setArrowToggle] = useState(false);
   return (
     <>
-      <div className="home">
-        <Container fluid="md">
+      <Container>
+        <div className="home">
           <Row>
             <Col>
               <Image src="data:image/webp;base64,UklGRpgDAABXRUJQVlA4TIwDAAAvdkAMEO/BJpJkK72vXvT4ZqS4w78Aam04jiRJarJ3X/C6wSD8N0lqto0kSak5fjws8o+QCI5hE9m2E36dOGS6bAJrWKJCBH0SkBQ86JkfCJ731Wu9DYoxhk1iYOGSWLi2AMTIUCbp2vbvvU4Zlu97fkrCV1AqChChRlVJEpY17VzODKoiVZlcTPof1Zj/kOHNnMe9fc+x9IOw1RQzNUVBYaC8NAIVKIrgiYj6/3UEbdu22tjRVkQIwcY5lHHsfHMOpv//w84phDxab/0Q0f8JQOGPP35D8ck1dvJ7Sp+/Fpw/57Od+JFSSh+/Kye3OeebPUnpDYCr55xzft6JL1p6i5usn+/Du5TSp5RS+vPpyOU+fEopfTyklNK/Oef7nPPVPiT5TvyVc77bj4NySCm9vs93jznni314LdLrlNL7+6ernHM+2Yfvyivl+mfO+RE7eRCvDym9ur7OOeeLvfhdvH+f0t+XOef8gN38Jl6l9xc55/xwuh/4fkjpx4d/cs755hQ72VtHki9edqfnl+enKO8nF0hycaZvyhaqfRHVqcSQpFMMZVdiAgt9h/LGBBa7okjdVmD8JdqFK21R57mybDoSaiy/QgxcbQsGri7zR9hXoNmuWVhxOjLwuHPOrYokGYStEdrNLNWlB9CaoLBT2qC5HmrTT7ZkErMINei26qha6DEoTnFUB1QOohMcarDfyCoLjvcKI4CO6oDKPUl6ODGvCSI021DtCuAUA8AqM2pbMWEUbFZMgSTtJp2yoHRQHICgxGpBdGiVYYUZBbstjDIVRSUAkdKj9kCSAYAX8xo44beYlLEICoFOcQpLj8zCApgEmzVR0GzglK6OUUythnIAEJVhDYxg/O8ZlAYAgnCr4IWrNyvDFraWEzOkFWxXdYJjNaOYolbxQKc4xUhf0lKOSq+MqzCJ0NQalKVoUGYgKmyE6kpGpXxZ1wSSnGu1CmOJU0YAQTF1lgpsV6EXdJWwKK6gp9oAsEpoa7SsOa7DLNQag0J7JAbFAkBUuLQVpipLhTZsgUWh6wG0hmpoBazCYFrRLgVe6Y57wXYdxk1iUFYOUBuvkPTOeeoAIuWM45MyVYDbAl2FAUdjOFIMYFLGgqj4GnETxLAiDChs3boAIChtAbxgrACzCRpbZFuUD74smAboKReUWmWq0fhNgGacPUnvxhbro3FeLM50kFYxRb3ia6Db6H8TAQ==" />
@@ -55,25 +165,37 @@ const Home = () => {
               <FontAwesomeIcon icon={faShoppingBag} />
             </Col>
           </Row>
-        </Container>
-      </div>
-      <div>
-        <Container>
+        </div>
+        <div>
           <Row className="Department-Row mb-4">
             <Col className="Department-Col" md={3}>
-              <Button>All Departments</Button>
-              <Row className="p-2">Fresh Meat</Row>
-              <Row className="p-2">Vegetables</Row>
-              <Row className="p-2">Fruit & Nut Gifts</Row>
-              <Row className="p-2">Fresh Berries</Row>
-              <Row className="p-2">Ocean Foods</Row>
-              <Row className="p-2">Butter & Eggs</Row>
-              <Row className="p-2">Fastfood</Row>
-              <Row className="p-2">Fresh Onion</Row>
-              <Row className="p-2">Papayaya & Crips</Row>
-              <Row className="p-2">Oatmeal</Row>
-              <Row className="p-2">Fresh Bananas</Row>
+              <Button
+                onClick={() => {
+                  setArrowToggle(!arrowToggle);
+                }}
+              >
+                All Departments
+              </Button>
+              {arrowToggle && (
+                <ul>
+                  {categories.map((category, index) => {
+                    return <li>{category}</li>;
+                  })}
+                </ul>
+              )}
+              {/* <Row className="p-2">Fresh Meat</Row>
+            <Row className="p-2">Vegetables</Row>
+            <Row className="p-2">Fruit & Nut Gifts</Row>
+            <Row className="p-2">Fresh Berries</Row>
+            <Row className="p-2">Ocean Foods</Row>
+            <Row className="p-2">Butter & Eggs</Row>
+            <Row className="p-2">Fastfood</Row>
+            <Row className="p-2">Fresh Onion</Row>
+            <Row className="p-2">Papayaya & Crips</Row>
+            <Row className="p-2">Oatmeal</Row>
+            <Row className="p-2">Fresh Bananas</Row> */}
             </Col>
+
             <Col>
               <Row className="">
                 <InputGroup className="mb-3 ">
@@ -103,8 +225,14 @@ const Home = () => {
               </Row>
             </Col>
           </Row>
-        </Container>
-        <Container>
+
+          <Row>
+            <Col>
+              <Responsive />
+            </Col>
+          </Row>
+
+          {/* <Container>
           <Row className=" Slider-Row mb-5">
             <Col md={3} className="Slider-Col ">
               <Carousel varient="dark">
@@ -151,9 +279,8 @@ const Home = () => {
               </Carousel>
             </Col>
           </Row>
-        </Container>
+        </Container> */}
 
-        <Container>
           <Row>
             <Col md={12} className="Featuredproduct">
               <h1>Featured product</h1>
@@ -163,25 +290,51 @@ const Home = () => {
           <Row className="">
             <Col md={12}>
               <ul className="featuredProductUl ">
-                <li className="featuredProductLi">All</li>
-                <li className="featuredProductLi">Oranges</li>
-                <li className="featuredProductLi">Fresh Meat</li>
-                <li className="featuredProductLi">Vegetables</li>
-                <li className="featuredProductLi">Fastfood</li>
+                <li
+                  className="featuredProductLi"
+                  onClick={() => setProductList(products)}
+                >
+                  All
+                </li>
+                <li
+                  className="featuredProductLi"
+                  onClick={() => filteredProducts("fruit")}
+                >
+                  Fruits
+                </li>
+                <li
+                  className="featuredProductLi"
+                  onClick={() => filteredProducts("meat")}
+                >
+                  Meat
+                </li>
+                {/* <li className="featuredProductLi">Vegetables</li> */}
+                <li
+                  className="featuredProductLi"
+                  onClick={() => filteredProducts("fastFood")}
+                >
+                  Fast Food
+                </li>
               </ul>
             </Col>
           </Row>
-        </Container>
-        <Container>
           <Row className="mb-2 pb-5 ">
-            <Col md={3} className="items">
-              <img src="https://preview.colorlib.com/theme/ogani/img/featured/feature-1.jpg.webp" />
-              <p>Crab Pool Security</p>
-              <p>
-                <b>$30.00</b>
-              </p>
-            </Col>
-            <Col md={3} className="items ">
+            {productList &&
+              productList.length > 0 &&
+              productList.map((product, index) => {
+                // console.log(product, "product");
+                return (
+                  <Col key={index} md={3} className="items">
+                    <img src={product.image} />
+                    <p>{product.name}</p>
+                    <p>
+                      <b>${product.price}</b>
+                    </p>
+                  </Col>
+                );
+              })}
+
+            {/* <Col md={3} className="items ">
               <img src="https://preview.colorlib.com/theme/ogani/img/featured/feature-2.jpg.webp" />
               <p>Crab Pool Security</p>
               <p>
@@ -203,8 +356,6 @@ const Home = () => {
               </p>
             </Col>
           </Row>
-        </Container>
-        <Container>
           <Row className="mb-5">
             <Col md={3} className="items ">
               <img src="https://preview.colorlib.com/theme/ogani/img/featured/feature-5.jpg.webp" />
@@ -233,10 +384,8 @@ const Home = () => {
               <p>
                 <b>$30.00</b>
               </p>
-            </Col>
+            </Col> */}
           </Row>
-        </Container>
-        <Container>
           <Row>
             <Col md={6} className="mb-5">
               <img src="https://preview.colorlib.com/theme/ogani/img/banner/xbanner-1.jpg.pagespeed.ic.aDN3QrExt6.webp" />
@@ -245,9 +394,6 @@ const Home = () => {
               <img src="https://preview.colorlib.com/theme/ogani/img/banner/xbanner-2.jpg.pagespeed.ic.-2eeuFVLcY.webp" />
             </Col>
           </Row>
-        </Container>
-
-        <Container>
           <Row className="mb-5">
             <Col md={4} className="list">
               <p className="latestproduct">Latest Products</p>
@@ -277,9 +423,6 @@ const Home = () => {
               </button>
             </Col>
           </Row>
-        </Container>
-
-        <Container>
           <Row className=" Slider-Row mb-5">
             <Col md={3} className="Slider-Col ">
               <Carousel varient="dark">
@@ -326,8 +469,7 @@ const Home = () => {
               </Carousel>
             </Col>
           </Row>
-        </Container>
-        <Container>
+
           <Row className="mb-5">
             <Col md={12} className="fromtheblog">
               <h1>From The Blog</h1>
@@ -377,8 +519,8 @@ const Home = () => {
               </p>
             </Col>
           </Row>
-        </Container>
-      </div>
+        </div>
+      </Container>
     </>
   );
 };
