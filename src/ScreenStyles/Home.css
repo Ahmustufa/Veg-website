@@ -1,3 +1,9 @@
+.default{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .home {
   height: 100px;
   /* border: solid 2px red; */
@@ -20,7 +26,16 @@ a{
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  border: 2px solid black;
+  
+}
+
+.Department-innerCol{
+  display: flex !important;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  border: 1px solid black;
+  
 }
 .Department-ul{
   list-style: none;

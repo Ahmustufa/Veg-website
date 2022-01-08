@@ -40,33 +40,27 @@ export default class Responsive extends Component {
         }
       ]
     };
+
+    const slider = ["https://preview.colorlib.com/theme/ogani/img/categories/cat-4.jpg.webp",
+                    "https://preview.colorlib.com/theme/ogani/img/categories/cat-5.jpg.webp",
+                    "https://preview.colorlib.com/theme/ogani/img/categories/cat-1.jpg.webp",
+                    "https://preview.colorlib.com/theme/ogani/img/categories/cat-2.jpg.webp",
+                    "https://preview.colorlib.com/theme/ogani/img/categories/cat-3.jpg.webp",
+                    "https://preview.colorlib.com/theme/ogani/img/categories/cat-4.jpg.webp",
+                    "https://preview.colorlib.com/theme/ogani/img/categories/cat-5.jpg.webp",
+                    "https://preview.colorlib.com/theme/ogani/img/categories/cat-2.jpg.webp"
+                    ]
     return (
       <div>
         <Slider {...settings}>
-          <div>
-            <h3><Image src="https://preview.colorlib.com/theme/ogani/img/categories/cat-4.jpg.webp"></Image></h3>
+          {slider.map((slide,index)=>{
+            return <>
+              <div>
+            <h3><Image src={slide}></Image></h3>
           </div>
-          <div>
-            <h3><Image src="https://preview.colorlib.com/theme/ogani/img/categories/cat-5.jpg.webp"></Image></h3>
-          </div>
-          <div>
-            <h3><Image src="https://preview.colorlib.com/theme/ogani/img/categories/cat-1.jpg.webp"></Image></h3>
-          </div>
-          <div>
-            <h3><Image src="https://preview.colorlib.com/theme/ogani/img/categories/cat-2.jpg.webp"></Image></h3>
-          </div>
-          <div>
-            <h3><Image src="https://preview.colorlib.com/theme/ogani/img/categories/cat-3.jpg.webp"></Image></h3>
-          </div>
-          <div>
-          <h3><Image src="https://preview.colorlib.com/theme/ogani/img/categories/cat-4.jpg.webp"></Image></h3>
-          </div>
-          <div>
-          <h3><Image src="https://preview.colorlib.com/theme/ogani/img/categories/cat-5.jpg.webp"></Image></h3>
-          </div>
-          <div>
-          <h3><Image src="https://preview.colorlib.com/theme/ogani/img/categories/cat-2.jpg.webp"></Image></h3>
-          </div>
+          
+            </>
+          })}
         </Slider>
       </div>
     );
