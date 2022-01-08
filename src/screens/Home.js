@@ -25,6 +25,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGratipay } from "@fortawesome/free-brands-svg-icons";
 import Responsive from "../components/Slider";
+import Slider2 from "../components/Slider2"
 
 // import { Link } from "react-router-dom";
 
@@ -35,7 +36,7 @@ function getRandomNumber(min, max) {
 }
 
 const Home = () => {
-  generateRandomPeoples();
+  
 
   const products = [
     {
@@ -92,7 +93,7 @@ const Home = () => {
       image:
         "https://preview.colorlib.com/theme/ogani/img/featured/feature-8.jpg.webp",
       price: getRandomNumber(200, 500),
-      category: "meat",
+      category: "fruit",
     },
     {
       name: `Product ${getRandomNumber(1, 10)}`,
@@ -137,17 +138,30 @@ const Home = () => {
     setProductList(products.filter((product) => product.category === category));
   };
 
-  const [arrowToggle, setArrowToggle] = useState(false);
+  const [arrowToggle, setArrowToggle] = useState(true);
   return (
     <>
       <Container>
         <div className="home">
-          <Row>
+          <Row >
+            <Col md={12}>
+          <ul className="home-ul">
+            <li className="p-5 me-5"><Image src="data:image/webp;base64,UklGRpgDAABXRUJQVlA4TIwDAAAvdkAMEO/BJpJkK72vXvT4ZqS4w78Aam04jiRJarJ3X/C6wSD8N0lqto0kSak5fjws8o+QCI5hE9m2E36dOGS6bAJrWKJCBH0SkBQ86JkfCJ731Wu9DYoxhk1iYOGSWLi2AMTIUCbp2vbvvU4Zlu97fkrCV1AqChChRlVJEpY17VzODKoiVZlcTPof1Zj/kOHNnMe9fc+x9IOw1RQzNUVBYaC8NAIVKIrgiYj6/3UEbdu22tjRVkQIwcY5lHHsfHMOpv//w84phDxab/0Q0f8JQOGPP35D8ck1dvJ7Sp+/Fpw/57Od+JFSSh+/Kye3OeebPUnpDYCr55xzft6JL1p6i5usn+/Du5TSp5RS+vPpyOU+fEopfTyklNK/Oef7nPPVPiT5TvyVc77bj4NySCm9vs93jznni314LdLrlNL7+6ernHM+2Yfvyivl+mfO+RE7eRCvDym9ur7OOeeLvfhdvH+f0t+XOef8gN38Jl6l9xc55/xwuh/4fkjpx4d/cs755hQ72VtHki9edqfnl+enKO8nF0hycaZvyhaqfRHVqcSQpFMMZVdiAgt9h/LGBBa7okjdVmD8JdqFK21R57mybDoSaiy/QgxcbQsGri7zR9hXoNmuWVhxOjLwuHPOrYokGYStEdrNLNWlB9CaoLBT2qC5HmrTT7ZkErMINei26qha6DEoTnFUB1QOohMcarDfyCoLjvcKI4CO6oDKPUl6ODGvCSI021DtCuAUA8AqM2pbMWEUbFZMgSTtJp2yoHRQHICgxGpBdGiVYYUZBbstjDIVRSUAkdKj9kCSAYAX8xo44beYlLEICoFOcQpLj8zCApgEmzVR0GzglK6OUUythnIAEJVhDYxg/O8ZlAYAgnCr4IWrNyvDFraWEzOkFWxXdYJjNaOYolbxQKc4xUhf0lKOSq+MqzCJ0NQalKVoUGYgKmyE6kpGpXxZ1wSSnGu1CmOJU0YAQTF1lgpsV6EXdJWwKK6gp9oAsEpoa7SsOa7DLNQag0J7JAbFAkBUuLQVpipLhTZsgUWh6wG0hmpoBazCYFrRLgVe6Y57wXYdxk1iUFYOUBuvkPTOeeoAIuWM45MyVYDbAl2FAUdjOFIMYFLGgqj4GnETxLAiDChs3boAIChtAbxgrACzCRpbZFuUD74smAboKReUWmWq0fhNgGacPUnvxhbro3FeLM50kFYxRb3ia6Db6H8TAQ==" /></li>
+            <li className="p-5"><a href="#"><b>HOME</b></a></li>
+            <li className="p-5"><a href="#"><b>SHOP</b></a></li>
+            <li className="p-5"><a href="#"><b>PAGES</b></a></li>
+            <li className="p-5 me-5"><a href="#"><b>BLOG</b></a></li>
+            <li className="p-5"><a href="#"><FontAwesomeIcon icon={faGratipay} /></a></li>
+            <li className=""><a href="#"><FontAwesomeIcon icon={faShoppingBag} /></a></li>
+          </ul>
+          </Col>
+          </Row>
+          {/* <Row>
             <Col>
               <Image src="data:image/webp;base64,UklGRpgDAABXRUJQVlA4TIwDAAAvdkAMEO/BJpJkK72vXvT4ZqS4w78Aam04jiRJarJ3X/C6wSD8N0lqto0kSak5fjws8o+QCI5hE9m2E36dOGS6bAJrWKJCBH0SkBQ86JkfCJ731Wu9DYoxhk1iYOGSWLi2AMTIUCbp2vbvvU4Zlu97fkrCV1AqChChRlVJEpY17VzODKoiVZlcTPof1Zj/kOHNnMe9fc+x9IOw1RQzNUVBYaC8NAIVKIrgiYj6/3UEbdu22tjRVkQIwcY5lHHsfHMOpv//w84phDxab/0Q0f8JQOGPP35D8ck1dvJ7Sp+/Fpw/57Od+JFSSh+/Kye3OeebPUnpDYCr55xzft6JL1p6i5usn+/Du5TSp5RS+vPpyOU+fEopfTyklNK/Oef7nPPVPiT5TvyVc77bj4NySCm9vs93jznni314LdLrlNL7+6ernHM+2Yfvyivl+mfO+RE7eRCvDym9ur7OOeeLvfhdvH+f0t+XOef8gN38Jl6l9xc55/xwuh/4fkjpx4d/cs755hQ72VtHki9edqfnl+enKO8nF0hycaZvyhaqfRHVqcSQpFMMZVdiAgt9h/LGBBa7okjdVmD8JdqFK21R57mybDoSaiy/QgxcbQsGri7zR9hXoNmuWVhxOjLwuHPOrYokGYStEdrNLNWlB9CaoLBT2qC5HmrTT7ZkErMINei26qha6DEoTnFUB1QOohMcarDfyCoLjvcKI4CO6oDKPUl6ODGvCSI021DtCuAUA8AqM2pbMWEUbFZMgSTtJp2yoHRQHICgxGpBdGiVYYUZBbstjDIVRSUAkdKj9kCSAYAX8xo44beYlLEICoFOcQpLj8zCApgEmzVR0GzglK6OUUythnIAEJVhDYxg/O8ZlAYAgnCr4IWrNyvDFraWEzOkFWxXdYJjNaOYolbxQKc4xUhf0lKOSq+MqzCJ0NQalKVoUGYgKmyE6kpGpXxZ1wSSnGu1CmOJU0YAQTF1lgpsV6EXdJWwKK6gp9oAsEpoa7SsOa7DLNQag0J7JAbFAkBUuLQVpipLhTZsgUWh6wG0hmpoBazCYFrRLgVe6Y57wXYdxk1iUFYOUBuvkPTOeeoAIuWM45MyVYDbAl2FAUdjOFIMYFLGgqj4GnETxLAiDChs3boAIChtAbxgrACzCRpbZFuUD74smAboKReUWmWq0fhNgGacPUnvxhbro3FeLM50kFYxRb3ia6Db6H8TAQ==" />
             </Col>
             <Col className="p-1" md={1}>
-              HOME
+              
             </Col>
             <Col className="p-1" md={1}>
               SHOP
@@ -164,7 +178,7 @@ const Home = () => {
             <Col>
               <FontAwesomeIcon icon={faShoppingBag} />
             </Col>
-          </Row>
+          </Row> */}
         </div>
         <div>
           <Row className="Department-Row mb-4">
@@ -177,23 +191,12 @@ const Home = () => {
                 All Departments
               </Button>
               {arrowToggle && (
-                <ul>
+                <ul className="Department-ul">
                   {categories.map((category, index) => {
-                    return <li>{category}</li>;
+                    return <li className="p-2" >{category}</li>;
                   })}
                 </ul>
               )}
-              {/* <Row className="p-2">Fresh Meat</Row>
-            <Row className="p-2">Vegetables</Row>
-            <Row className="p-2">Fruit & Nut Gifts</Row>
-            <Row className="p-2">Fresh Berries</Row>
-            <Row className="p-2">Ocean Foods</Row>
-            <Row className="p-2">Butter & Eggs</Row>
-            <Row className="p-2">Fastfood</Row>
-            <Row className="p-2">Fresh Onion</Row>
-            <Row className="p-2">Papayaya & Crips</Row>
-            <Row className="p-2">Oatmeal</Row>
-            <Row className="p-2">Fresh Bananas</Row> */}
             </Col>
 
             <Col>
@@ -227,59 +230,10 @@ const Home = () => {
           </Row>
 
           <Row>
-            <Col>
+            <Col className="mb-5">
               <Responsive />
             </Col>
           </Row>
-
-          {/* <Container>
-          <Row className=" Slider-Row mb-5">
-            <Col md={3} className="Slider-Col ">
-              <Carousel varient="dark">
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="https://preview.colorlib.com/theme/ogani/img/categories/cat-1.jpg.webp"
-                    alt="First slide"
-                  />
-                </Carousel.Item>
-              </Carousel>
-            </Col>
-            <Col md={3} className="Slider-Col ">
-              <Carousel varient="dark">
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="https://preview.colorlib.com/theme/ogani/img/categories/cat-1.jpg.webp"
-                    alt="First slide"
-                  />
-                </Carousel.Item>
-              </Carousel>
-            </Col>
-            <Col md={3} className="Slider-Col ">
-              <Carousel varient="dark">
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="https://preview.colorlib.com/theme/ogani/img/categories/cat-1.jpg.webp"
-                    alt="First slide"
-                  />
-                </Carousel.Item>
-              </Carousel>
-            </Col>
-            <Col md={3} className="Slider-Col ">
-              <Carousel varient="dark">
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="https://preview.colorlib.com/theme/ogani/img/categories/cat-1.jpg.webp"
-                    alt="First slide"
-                  />
-                </Carousel.Item>
-              </Carousel>
-            </Col>
-          </Row>
-        </Container> */}
 
           <Row>
             <Col md={12} className="Featuredproduct">
@@ -333,58 +287,6 @@ const Home = () => {
                   </Col>
                 );
               })}
-
-            {/* <Col md={3} className="items ">
-              <img src="https://preview.colorlib.com/theme/ogani/img/featured/feature-2.jpg.webp" />
-              <p>Crab Pool Security</p>
-              <p>
-                <b>$30.00</b>
-              </p>
-            </Col>
-            <Col md={3} className="items ">
-              <img src="https://preview.colorlib.com/theme/ogani/img/featured/feature-3.jpg.webp" />
-              <p>Crab Pool Security</p>
-              <p>
-                <b>$30.00</b>
-              </p>
-            </Col>
-            <Col md={3} className="items ">
-              <img src="https://preview.colorlib.com/theme/ogani/img/featured/feature-4.jpg.webp" />
-              <p>Crab Pool Security</p>
-              <p>
-                <b>$30.00</b>
-              </p>
-            </Col>
-          </Row>
-          <Row className="mb-5">
-            <Col md={3} className="items ">
-              <img src="https://preview.colorlib.com/theme/ogani/img/featured/feature-5.jpg.webp" />
-              <p>Crab Pool Security</p>
-              <p>
-                <b>$30.00</b>
-              </p>
-            </Col>
-            <Col md={3} className="items ">
-              <img src="https://preview.colorlib.com/theme/ogani/img/featured/feature-6.jpg.webp" />
-              <p>Crab Pool Security</p>
-              <p>
-                <b>$30.00</b>
-              </p>
-            </Col>
-            <Col md={3} className="items ">
-              <img src="https://preview.colorlib.com/theme/ogani/img/featured/feature-7.jpg.webp" />
-              <p>Crab Pool Security</p>
-              <p>
-                <b>$30.00</b>
-              </p>
-            </Col>
-            <Col md={3} className="items ">
-              <img src="https://preview.colorlib.com/theme/ogani/img/featured/feature-8.jpg.webp" />
-              <p>Crab Pool Security</p>
-              <p>
-                <b>$30.00</b>
-              </p>
-            </Col> */}
           </Row>
           <Row>
             <Col md={6} className="mb-5">
@@ -424,49 +326,14 @@ const Home = () => {
             </Col>
           </Row>
           <Row className=" Slider-Row mb-5">
-            <Col md={3} className="Slider-Col ">
-              <Carousel varient="dark">
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="https://preview.colorlib.com/theme/ogani/img/categories/cat-1.jpg.webp"
-                    alt="First slide"
-                  />
-                </Carousel.Item>
-              </Carousel>
+            <Col md={4} className="Slider-Col ">
+              <Slider2/>
             </Col>
-            <Col md={3} className="Slider-Col ">
-              <Carousel varient="dark">
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="https://preview.colorlib.com/theme/ogani/img/categories/cat-1.jpg.webp"
-                    alt="First slide"
-                  />
-                </Carousel.Item>
-              </Carousel>
+            <Col md={4} className="Slider-Col ">
+            <Slider2/>
             </Col>
-            <Col md={3} className="Slider-Col ">
-              <Carousel varient="dark">
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="https://preview.colorlib.com/theme/ogani/img/categories/cat-1.jpg.webp"
-                    alt="First slide"
-                  />
-                </Carousel.Item>
-              </Carousel>
-            </Col>
-            <Col md={3} className="Slider-Col ">
-              <Carousel varient="dark">
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src="https://preview.colorlib.com/theme/ogani/img/categories/cat-1.jpg.webp"
-                    alt="First slide"
-                  />
-                </Carousel.Item>
-              </Carousel>
+            <Col md={4} className="Slider-Col ">
+            <Slider2/>
             </Col>
           </Row>
 
