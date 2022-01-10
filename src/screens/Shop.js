@@ -1,11 +1,19 @@
 import React from 'react'
-
-const Shop = () => {
+import Helmet from 'react-helmet'
+const shop = () => {
     return (
+        <>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>Shop</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
         <div>
             Shop
         </div>
+        </>
+        
     )
 }
 
-export default Shop
+export default shop
