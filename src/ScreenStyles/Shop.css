@@ -1,0 +1,40 @@
+.bg-div{
+    background-image: url("https://preview.colorlib.com/theme/ogani/img/breadcrumb.jpg.webp");
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+.bg-link{
+    color: white;
+}
+.Department-ul{
+    list-style: none;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+
+
+.selection1{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: medium;
+
+}
+.selection2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+
+.selection3{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: large;
+}
