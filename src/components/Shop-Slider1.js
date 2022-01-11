@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image } from "react-bootstrap";
+import { Col, Image, Row } from "react-bootstrap";
 import Slider from "react-slick";
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../ComponentStyles/Shop-Slider1.css'
@@ -21,20 +21,22 @@ export default class MultipleItems extends Component {
       "https://preview.colorlib.com/theme/ogani/img/categories/cat-4.jpg.webp",
     ];
     return (
-      <div>
+      <Row className="shop-slider1">
         <Slider {...settings}>
+        
           {shopslider1.map((slider, index) => {
             return (
-              <div className="shop-slider1">
+                <Col md={4} >
                 <Image src={slider} ></Image>
                 <p>Dried Fruit</p>
                 <p>Raisin'n'nuts</p>
                 <p><b>$30.00</b></p>
-              </div>
-            );
+                </Col>
+               );
           })}
+          
         </Slider>
-      </div>
+        </Row>
     );
   }
 }

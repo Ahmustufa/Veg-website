@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image } from "react-bootstrap";
+import { Col, Image, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Slider from "react-slick";
 import "../ComponentStyles/Slider2.css";
@@ -36,13 +36,15 @@ export default class VerticalMode extends Component {
             return (
               <>
                 <div className="slider-div">
-                  <h3>
-                    <Image src={slide2}></Image>
-                  </h3>
-                  <p className="p-5">Crab Pool Security</p>
-                  <p>
-                    <b>$30.00</b>
-                  </p>
+                  <Image src={slide2}></Image>
+                  <Row>
+                    <p className="p-5">Crab Pool Security</p>
+                  </Row>
+                  <Row>
+                    <p>
+                      <b>$30.00</b>
+                    </p>
+                  </Row>
                 </div>
               </>
             );

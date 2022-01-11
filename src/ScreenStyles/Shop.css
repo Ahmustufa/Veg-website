@@ -17,7 +17,6 @@
     flex-direction: column;
 }
 
-
 .selection1{
     display: flex;
     justify-content: start;
@@ -37,4 +36,17 @@
     justify-content: end;
     align-items: center;
     font-size: large;
+}
+.item-des{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle{
+    border-radius: 50%;
+    border: 2px solid black;
+    height: 0.75rem;
+    width: 0.75rem;
 }

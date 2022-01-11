@@ -1,13 +1,23 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { Row, Col, Container, Button, DropdownButton, Dropdown, InputGroup, Image } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  Container,
+  Button,
+  DropdownButton,
+  Dropdown,
+  InputGroup,
+  Image,
+} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../ScreenStyles/Shop.css";
 import { Link } from "react-router-dom";
 import Slider from "../components/Shop-Slider1";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faThLarge, faGripHorizontal} from "@fortawesome/free-solid-svg-icons";
+import { faThLarge, faGripHorizontal } from "@fortawesome/free-solid-svg-icons";
+import Slider2 from "../components/Slider2"
 const shop = () => {
   const categories = [
     "Fresh Meat",
@@ -29,6 +39,12 @@ const shop = () => {
     "https://preview.colorlib.com/theme/ogani/img/categories/cat-2.jpg.webp",
     "https://preview.colorlib.com/theme/ogani/img/categories/cat-3.jpg.webp",
     "https://preview.colorlib.com/theme/ogani/img/categories/cat-4.jpg.webp",
+    "https://preview.colorlib.com/theme/ogani/img/product/product-9.jpg.webp",
+    "https://preview.colorlib.com/theme/ogani/img/product/product-8.jpg.webp",
+    "https://preview.colorlib.com/theme/ogani/img/product/product-7.jpg.webp",
+    "https://preview.colorlib.com/theme/ogani/img/product/product-10.jpg.webp",
+    "https://preview.colorlib.com/theme/ogani/img/product/product-11.jpg.webp",
+    "https://preview.colorlib.com/theme/ogani/img/product/product-12.jpg.webp",
   ];
   return (
     <>
@@ -69,65 +85,142 @@ const shop = () => {
             <h3>
               <b>Price</b>
             </h3>
+            
           </Col>
           <Col md={9}>
             <hr style={{ width: "95%", height: "2px" }} className="line" />
           </Col>
         </Row>
         <Row className="mb-5">
-            <Col md={3}>
+          <Col md={3}>
             <div className="mb-5">
-            <h3>
-            <b>Colors</b>
-            </h3>
+              <h3>
+                <b>Colors</b>
+              </h3>
+              <Row>
+                <Col md={1} className="d-flex p-2">
+                  <div className="circle"></div>
+                </Col>
+                <Col md={3}>
+                  <p>White</p>
+                </Col>
+                <Col md={1} className="d-flex p-2">
+                  <div
+                    className="circle"
+                    style={{ backgroundColor: "gray" }}
+                  ></div>
+                </Col>
+                <Col md={7}>
+                  <p>Gray</p>
+                </Col>
+
+                <Col md={1} className="d-flex p-2">
+                  <div
+                    className="circle"
+                    style={{ backgroundColor: "red" }}
+                  ></div>
+                </Col>
+                <Col md={3}>
+                  <p>Red</p>
+                </Col>
+                <Col md={1} className="d-flex p-2">
+                  <div
+                    className="circle"
+                    style={{ backgroundColor: "black" }}
+                  ></div>
+                </Col>
+                <Col md={7}>
+                  <p>Black</p>
+                </Col>
+
+                <Col md={1} className="d-flex p-2">
+                  <div
+                    className="circle"
+                    style={{ backgroundColor: "blue" }}
+                  ></div>
+                </Col>
+                <Col md={3}>
+                  <p>Blue</p>
+                </Col>
+                <Col md={1} className="d-flex p-2">
+                  <div
+                    className="circle"
+                    style={{ backgroundColor: "green" }}
+                  ></div>
+                </Col>
+                <Col md={6}>
+                  <p>Green</p>
+                </Col>
+              </Row>
             </div>
-            <div className="mb-5">
-            <h3><b>Popular Size</b></h3>
-            </div>
-            </Col>
-            <Col md={9}>
-            {/* <div className="shop-items">
-                <p className="">Sort By</p>
-                <DropdownButton title="Default" variant="dark">
+            <Row>
+              <h3 className="mb-4">
+                <b>Popular Size</b>
+              </h3>
+              <Row className="mb-2">
+                <Col md={3}>
+                  <Button variant="light">Large</Button>
+                </Col>
+                <Col md={6}>
+                  <Button variant="light">Medium</Button>
+                </Col>
+              </Row>
+            </Row>
+            <Row className="mb-5">
+              <Col md={3}>
+                <Button variant="light">Small</Button>
+              </Col>
+              <Col md={6}>
+                <Button variant="light">Tiny</Button>
+              </Col>
+            </Row>
+            <Row>
+              <h3>
+                <b>Latest Products</b>
+              </h3>
+              <Col>
+              <Slider2/>
+              </Col>
+            </Row>
+          </Col>
+          <Col md={9}>
+            <Row className="mb-5">
+              <Col md={4} className="selection1">
+                <InputGroup>
+                  <p className="me-2">Sort By</p>
+                  <DropdownButton size="sm" title="Default" variant="dark">
                     <DropdownItem href="#">Default</DropdownItem>
                     <DropdownItem href="#">Default</DropdownItem>
-                </DropdownButton>
-                <p><b className="pe-3">16</b>Products found</p>
-                <FontAwesomeIcon icon={faThLarge} />
-                <FontAwesomeIcon icon={faGripHorizontal} />
-                </div> */}
-                <Row>
-                    <Col md={4} className="selection1">
-                    <InputGroup >
-                    <p className="me-2">Sort By</p>
-                    <DropdownButton size="sm" title="Default" variant="dark">
-                    <DropdownItem href="#">Default</DropdownItem>
-                    <DropdownItem href="#">Default</DropdownItem>
-                </DropdownButton>
+                  </DropdownButton>
                 </InputGroup>
-                    </Col >
-                    <Col md={4} className="selection2">
-                    <p><b className="pe-3">16</b>Products found</p>
+              </Col>
+              <Col md={4} className="selection2">
+                <p>
+                  <b className="pe-3">16</b>Products found
+                </p>
+              </Col>
+              <Col md={3} className="selection3">
+                <FontAwesomeIcon icon={faThLarge} className="me-4" />
+                <FontAwesomeIcon icon={faGripHorizontal} />
+              </Col>
+            </Row>
+
+            <Row>
+              {items.map((item, index) => {
+                return (
+                  <>
+                    <Col md={4} className="item-des">
+                      <Image src={item}></Image>
+                      <p>Crab Pool Security</p>
+                      <p>
+                        <b>$30.00</b>
+                      </p>
                     </Col>
-                    <Col md={3} className="selection3">
-                    <FontAwesomeIcon icon={faThLarge} className="me-4"/>
-                    <FontAwesomeIcon icon={faGripHorizontal}  />
-                    </Col>
-                </Row>
-                {
-                    items.map((item,index)=>{
-                        return(
-                            <>
-                            <div>
-                                <Image src={item}></Image>
-                                <p>Crab Pool Security</p>
-                                <p><b>$30.00</b></p>
-                            </div>
-                            </>
-                        )
-                    })
-                }
-            </Col>
+                  </>
+                );
+              })}
+            </Row>
+          </Col>
         </Row>
       </Container>
     </>
