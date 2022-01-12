@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-
+import { Link } from "react-router-dom";
+import "../ScreenStyles/Contact.css"
 const Contact = () => {
   return (
     <>
@@ -9,7 +10,16 @@ const Contact = () => {
         <title>Contact</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      <div>Contact</div>
+      
+      <div className="bg-div mb-5">
+        <h1>Organi Shop</h1>
+        <Link to={"/"} className="bg-link">
+          Home - Contact Us
+        </Link>
+      </div>
+
+      
+      
     </>
   );
 };
