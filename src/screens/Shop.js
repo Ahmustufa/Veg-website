@@ -88,7 +88,7 @@ const shop = () => {
             
           </Col>
           <Col md={9}>
-            <hr style={{ width: "95%", height: "2px" }} className="line" />
+            <hr style={{ width: "100%", height: "2px" }} className="line" />
           </Col>
         </Row>
         <Row className="mb-5">
@@ -199,7 +199,7 @@ const shop = () => {
                   <b className="pe-3">16</b>Products found
                 </p>
               </Col>
-              <Col md={3} className="selection3">
+              <Col md={4} className="selection3">
                 <FontAwesomeIcon icon={faThLarge} className="me-4" />
                 <FontAwesomeIcon icon={faGripHorizontal} />
               </Col>

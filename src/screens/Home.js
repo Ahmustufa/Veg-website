@@ -143,11 +143,11 @@ const Home = () => {
   return (
     <>
       <Container>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Home</title>
-        <link rel="canonical" href="http://mysite.com/example" />
-      </Helmet>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Home</title>
+          <link rel="canonical" href="http://mysite.com/example" />
+        </Helmet>
         <div>
           <Row className="Department-Row mb-4">
             <Col className="Department-Col" md={3}>
@@ -263,41 +263,65 @@ const Home = () => {
                 );
               })}
           </Row>
-          <Row>
-            <Col md={6} className="mb-5">
+          <Row className="mb-5">
+            <Col md={6} >
               <img src="https://preview.colorlib.com/theme/ogani/img/banner/xbanner-1.jpg.pagespeed.ic.aDN3QrExt6.webp" />
             </Col>
-            <Col md={6} className="mb-5">
+            <Col md={6} >
               <img src="https://preview.colorlib.com/theme/ogani/img/banner/xbanner-2.jpg.pagespeed.ic.-2eeuFVLcY.webp" />
             </Col>
           </Row>
           <Row className="mb-5">
             <Col md={4} className="list">
-              <p className="latestproduct">Latest Products</p>
-              <Button variant="dark">
-                <FontAwesomeIcon icon={faArrowLeft} />
-              </Button>
-              <Button variant="dark">
-                <FontAwesomeIcon icon={faArrowRight} />
-              </Button>
+              <Row>
+                <Col md={8}>
+                  <p className="">Latest Products</p>
+                </Col>
+                <Col md={2}>
+                  <Button variant="dark" size="sm" className="mx-1">
+                    <FontAwesomeIcon icon={faArrowLeft} />
+                  </Button>
+                </Col>
+                <Col md={2}>
+                  <Button variant="dark" size="sm" className="mx-1">
+                    <FontAwesomeIcon icon={faArrowRight} />
+                  </Button>
+                </Col>
+              </Row>
             </Col>
             <Col md={4} className="list">
-              <p className="latestproduct">Top Rated Products</p>
-              <Button variant="dark">
-                <FontAwesomeIcon icon={faArrowLeft} />
-              </Button>
-              <Button variant="dark">
-                <FontAwesomeIcon icon={faArrowRight} />
-              </Button>
+              <Row>
+                <Col md={8}>
+                  <p className="">Top Rated Products</p>
+                </Col>
+                <Col md={2}>
+                  <Button variant="dark" size="sm" className="mx-1">
+                    <FontAwesomeIcon icon={faArrowLeft} />
+                  </Button>
+                </Col>
+                <Col md={2}>
+                  <Button variant="dark" size="sm" className="mx-1">
+                    <FontAwesomeIcon icon={faArrowRight} />
+                  </Button>
+                </Col>
+              </Row>
             </Col>
-            <Col md={4} className="list ">
-              <p className="latestproduct">Review Products</p>
-              <Button variant="dark">
-                <FontAwesomeIcon icon={faArrowLeft} />
-              </Button>
-              <Button variant="dark">
-                <FontAwesomeIcon icon={faArrowRight} />
-              </Button>
+            <Col md={4} className="list">
+              <Row>
+                <Col md={8}>
+                  <p className="">Review Products</p>
+                </Col>
+                <Col md={2}>
+                  <Button variant="dark" size="sm" className="mx-1">
+                    <FontAwesomeIcon icon={faArrowLeft} />
+                  </Button>
+                </Col>
+                <Col md={2}>
+                  <Button variant="dark" size="sm" className="mx-1">
+                    <FontAwesomeIcon icon={faArrowRight} />
+                  </Button>
+                </Col>
+              </Row>
             </Col>
           </Row>
           <Row className=" Slider-Row mb-5">

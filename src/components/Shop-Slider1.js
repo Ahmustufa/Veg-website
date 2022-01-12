@@ -21,16 +21,18 @@ export default class MultipleItems extends Component {
       "https://preview.colorlib.com/theme/ogani/img/categories/cat-4.jpg.webp",
     ];
     return (
-      <Row className="shop-slider1">
+      <Row >
         <Slider {...settings}>
         
           {shopslider1.map((slider, index) => {
             return (
-                <Col md={4} >
+                <Col md={4}>
+                  <div className="shop-slider1" >
                 <Image src={slider} ></Image>
-                <p>Dried Fruit</p>
-                <p>Raisin'n'nuts</p>
-                <p><b>$30.00</b></p>
+                <p className="p">Dried Fruit</p>
+                <p className="p">Raisin'n'nuts</p>
+                <p className="p"><b>$30.00</b></p>
+                </div>
                 </Col>
                );
           })}
