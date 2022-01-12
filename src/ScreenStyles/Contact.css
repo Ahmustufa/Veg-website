@@ -1,0 +1,9 @@
+.bg-div{
+    background-image: url("https://preview.colorlib.com/theme/ogani/img/breadcrumb.jpg.webp");
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
