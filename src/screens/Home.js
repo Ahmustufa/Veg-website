@@ -121,25 +121,25 @@ const Home = () => {
 
   const [productList, setProductList] = useState(products);
 
-  // const categories = [
-  //   "Fresh Meat",
-  //   "Vegetables",
-  //   "Fruit & Nut Gifts",
-  //   "Fresh Berries",
-  //   "Ocean Foods",
-  //   "Butter & Eggs",
-  //   "Fastfood",
-  //   "Fresh Onion",
-  //   "Papayaya & Crips",
-  //   "Oatmeal",
-  //   "Fresh Bananas",
-  // ];
+  const categories = [
+    "Fresh Meat",
+    "Vegetables",
+    "Fruit & Nut Gifts",
+    "Fresh Berries",
+    "Ocean Foods",
+    "Butter & Eggs",
+    "Fastfood",
+    "Fresh Onion",
+    "Papayaya & Crips",
+    "Oatmeal",
+    "Fresh Bananas",
+  ];
 
-  // const filteredProducts = (category) => {
-  //   setProductList(products.filter((product) => product.category === category));
-  // };
+  const filteredProducts = (category) => {
+    setProductList(products.filter((product) => product.category === category));
+  };
 
-  // const [arrowToggle, setArrowToggle] = useState(true);
+  const [arrowToggle, setArrowToggle] = useState(true);
   return (
     <>
       <Container>

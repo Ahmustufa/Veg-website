@@ -6,9 +6,8 @@ import {
   Container,
   Button,
   DropdownButton,
-  Dropdown,
   InputGroup,
-  Image,
+  Image
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../ScreenStyles/Shop.css";
@@ -16,7 +15,7 @@ import { Link } from "react-router-dom";
 import Slider from "../components/Shop-Slider1";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThLarge, faGripHorizontal } from "@fortawesome/free-solid-svg-icons";
+import { faThLarge, faGripHorizontal} from "@fortawesome/free-solid-svg-icons";
 import Slider2 from "../components/Slider2"
 const shop = () => {
   const categories = [
@@ -46,14 +45,17 @@ const shop = () => {
     "https://preview.colorlib.com/theme/ogani/img/product/product-11.jpg.webp",
     "https://preview.colorlib.com/theme/ogani/img/product/product-12.jpg.webp",
   ];
+ 
   return (
+    
+    
     <>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Shop</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-
+    
       <div className="bg-div mb-5">
         <h1>Organi Shop</h1>
         <Link to={"/"} className="bg-link">
