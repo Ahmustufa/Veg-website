@@ -7,3 +7,32 @@
     color: white;
     flex-direction: column;
 }
+
+/* .contactbg{
+    background-image: url("https://preview.colorlib.com/theme/ogani/img/breadcrumb.jpg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+} */
+.contactHeading{
+   margin: auto;
+}
+.bgLink{
+   /* flex-direction: column; */
+}
+.contactInfo{
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    
+}
+.infoContent{
+    justify-content: center !important;
+    /* padding: 5vh; */
+    align-items: center !important;
+    margin: auto;
+    /* text-align: end; */
+}

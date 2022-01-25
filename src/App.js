@@ -4,7 +4,7 @@ import Home from "./screens/Home";
 import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Pages from "./screens/Pages";
-import { Blog } from "./screens/Blog";
+import Blog from "./screens/Blog";
 import Contact from "./screens/Contact";
 import Shop from "./screens/Shop";
 
